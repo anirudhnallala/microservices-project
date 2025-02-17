@@ -1,0 +1,28 @@
+# Server configuration
+server:
+  port: ${PORT:8082}  # Default to 8082, but can be overridden via environment variable
+
+# Spring application name for service discovery with Eureka (service registry)
+spring:
+  application:
+    name: order-service
+
+  # Config Server setup for externalized configuration (if using Spring Cloud Config)
+  cloud:
+    config:
+      uri: http://config-server:8888  # Connect to the config-server service at port 8888
+
+  datasource:
+    initialize: false  # Disable datasource auto-initialization
+  jpa:
+    hibernate:
+      ddl-auto: none  # Don't auto-generate schema for DB (disable for now)
+
+# Eureka service discovery configuration (for registration with service registry)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/  # Connect to the Eureka service registry at port 8761
+    registerWithEureka: true
+    fetchRegistry: true
+

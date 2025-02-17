@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/anirudhnallala/config_repo.git
+          clone-on-start: true

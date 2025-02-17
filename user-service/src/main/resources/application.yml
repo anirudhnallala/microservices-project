@@ -1,0 +1,36 @@
+# Server configuration
+server:
+  port: ${PORT:8081}  # Default to 8081, but can be overridden via environment variable
+
+# Spring application name for service discovery with Eureka (service registry)
+spring:
+  application:
+    name: user-service
+
+  # Config Server setup for externalized configuration (e.g., Spring Cloud Config)
+  cloud:
+    config:
+      uri: http://config-server:8888  # Connect to the config-server service at port 8888
+
+  # DataSource and JPA configurations (disabled for now)
+  datasource:
+    initialize: false  # Disable datasource auto-initialization
+  jpa:
+    hibernate:
+      ddl-auto: none  # Don't auto-generate DB schema
+    show-sql: false  # Disable SQL logging for now
+
+# Eureka service discovery configuration (for registration with service registry)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/  # Connect to the Eureka service registry at port 8761
+    registerWithEureka: true
+    fetchRegistry: true
+
+# Optional: Configure logging for better visibility (not necessary but helpful)
+logging:
+  level:
+    root: INFO  # Default log level
+    org.springframework.web: DEBUG  # Log level for Spring Web (optional)
+
