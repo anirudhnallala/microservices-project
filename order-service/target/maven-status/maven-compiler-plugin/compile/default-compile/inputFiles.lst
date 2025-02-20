@@ -1,1 +1,3 @@
+/root/microservices-project/order-service/src/main/java/com/example/orderservice/controller/OrderController.java
+/root/microservices-project/order-service/src/main/java/com/example/orderservice/model/Order.java
 /root/microservices-project/order-service/src/main/java/com/example/orderservice/OrderServiceApplication.java
