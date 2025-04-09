@@ -13,7 +13,7 @@ services:
       - microservice-net
 
   user-service:
-    image: user-service
+    image: anirudhnallala/user-service:latest
     container_name: user-service
     build:
       context: ./user-service
@@ -39,8 +39,7 @@ services:
       - microservice-net
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
-    
-  api-gateway:
+api-gateway:
     image: api-gateway
     container_name: api-gateway
     build:
@@ -57,4 +56,3 @@ services:
 networks:
   microservice-net:
     driver: bridge
-
