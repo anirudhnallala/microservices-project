@@ -1,0 +1,6 @@
+# Ignore all JAR files
+*.jar
+
+# Also ignore target folders (Maven build output)
+target/
+
