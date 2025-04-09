@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: user-service
 spec:
+  type: LoadBalancer
   selector:
     app: user-service
-  type: NodePort
   ports:
-    - port: 8081
+    - protocol: TCP
+      port: 8081
       targetPort: 8081
-      nodePort: 30081  # You can choose any unused port between 30000-32767
-
