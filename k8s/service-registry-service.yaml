@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: service-registry
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: service-registry
   ports:
